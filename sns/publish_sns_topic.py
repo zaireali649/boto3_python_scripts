@@ -1,18 +1,10 @@
-"""
-Your module description
-"""
-
 import boto3 as AWS
 
 client = AWS.client('sns')
 
 response = client.list_topics()
 
-
 #%%
-for k,v in response.items():
-    #print(k, v)
-    pass
     
 Topics = response['Topics']
 
