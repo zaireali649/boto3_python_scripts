@@ -1,22 +1,10 @@
-import boto3 as AWS
+import boto3
 
-client = AWS.client('sns')
-
-response = client.list_topics()
+def sns_publish_topic(sns_client, TopicArn, Message):
+    sns_client.publish(TopicArn=TopicArn, Message=Message)
 
 #%%
-    
-Topics = response['Topics']
 
-print(len(Topics))
-
-for Topic in Topics:
-    TopicArn = Topic['TopicArn']
-    response = client.publish(
-        TopicArn=TopicArn,
-        Message='JSONhariston did it!!!!'
-        )
-    
-    
-    
-    break
+if __name__ == "__main__":
+    sns = boto3.client('sns')
+    sns_publish_topic(sns, 'arn:aws:sns:us-east-1:458806987020:Idontknow', 'JSONhariston did it!!!!')
