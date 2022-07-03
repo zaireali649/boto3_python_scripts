@@ -41,6 +41,7 @@ def create_apache_ec2(client, MaxCount=1, MinCount=1, KeyName=None, SecurityGrou
     except Exception as e:
         print("Failed", e)
     
-client = boto3.client('ec2')
-
-create_apache_ec2(client, KeyName="private-ec2", SecurityGroups=["launch-wizard-6"])
+if __name__ == "__main__":
+    client = boto3.client('ec2')
+    
+    create_apache_ec2(client, KeyName="private-ec2", SecurityGroups=["launch-wizard-6"])
