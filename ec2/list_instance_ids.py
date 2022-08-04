@@ -1,14 +1,17 @@
 import boto3
 
-ec2 = boto3.client('ec2')
-
-response = ec2.describe_instances()
-
-reservations = response["Reservations"]
-
-for reservation in reservations:
-    instances = reservation["Instances"]
-    for instance in instances:
-        instanceId = instance["InstanceId"]
-        if("i-0c20739c3c11da9fb" != instanceId):
+def list_instance_ids(ec2_client):
+    response = ec2_client.describe_instances()
+    
+    reservations = response["Reservations"]
+    
+    for reservation in reservations:
+        instances = reservation["Instances"]
+        for instance in instances:
+            instanceId = instance["InstanceId"]
+            
             print(instanceId)
+            
+if __name__ == "__main__":
+    ec2 = boto3.client('ec2')
+    list_instance_ids(ec2)
