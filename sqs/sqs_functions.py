@@ -1,6 +1,3 @@
-import boto3
-import random
-
 def create_queue(sqs, QueueName):
     response = sqs.create_queue(
         QueueName=QueueName
@@ -51,6 +48,9 @@ def get_messages(sqs, QueueUrl):
     return out_messages
 
 if __name__ == "__main__":
+    import boto3
+    import random
+
     sqs = boto3.client('sqs')
     
     QN = "gold-from-function-2"
