@@ -21,11 +21,6 @@ response = client.list_functions()
 
 #%%
 
-for key in response:
-    print(key)
-    
-#%%
-
 functions = response['Functions']
 
 #%%
