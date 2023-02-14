@@ -15,7 +15,6 @@ def create_apache_ec2(client, MaxCount=1, MinCount=1, KeyName=None, SecurityGrou
     if(UserData == None):
         UserData='''#!/bin/bash
         apt update -y
-        apt upgrade -y
         apt-get install -y apache2
         systemctl start apache2
         systemctl enable apache2'''
