@@ -9,7 +9,7 @@ def create_apache_ec2(client):
                          ImageId="ami-0f1a5f5ada0e7da53",         # us-west-2 ami as of 2/16/23
                          InstanceType="t2.micro",
                          KeyName="private-ec2",
-                         SecurityGroups=["launch-wizard-6"],
+                         SecurityGroups=["launch-wizard-6"],      # will probably need to change this
                          UserData=boot_apache2_script)
         print("Started")
     except:
