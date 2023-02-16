@@ -6,7 +6,7 @@ def create_apache_ec2(client):
     try:
         client.run_instances(MaxCount=1,
                          MinCount=1,
-                         ImageId="ami-09e67e426f25ce0d7",
+                         ImageId="ami-0f1a5f5ada0e7da53",         # us-west-2 ami as of 2/16/23
                          InstanceType="t2.micro",
                          KeyName="private-ec2",
                          SecurityGroups=["launch-wizard-6"],
