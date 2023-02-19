@@ -19,4 +19,4 @@ def list_instance_ids(ec2_client):
 if __name__ == "__main__":
     ec2 = boto3.client('ec2')
     instanceIds = list_instance_ids(ec2)
-    print(instanceIds)
+    print('\n'.join(instanceIds))
