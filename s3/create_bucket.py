@@ -7,4 +7,4 @@ client = boto3.client("s3")
 
 #%%
 
-client.create_bucket(Bucket="smontes-bucket-test-boto3") 
+client.create_bucket(Bucket="smontes-catch-all") 
