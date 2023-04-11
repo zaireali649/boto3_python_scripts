@@ -1,14 +1,13 @@
-import boto3
+#import boto3
 
-s3 = boto3.client('s3')
+#s3 = boto3.client('s3')
 
-bucket_name="smontes-catch-all"
-key="list_buckets.py" #name of object
-
-response = s3.delete_object(
-    Bucket=bucket_name,
-    Key=key
-)
+#bucket_name="smontes-catch-all"
+#key="list_buckets.py" #name of object
+#response = s3.delete_object(
+ #   Bucket=bucket_name,
+  #  Key=key
+#)
 
     #All the documentation but only Bucket and Key is required
    # response = client.delete_object(
@@ -20,3 +19,17 @@ response = s3.delete_object(
     #BypassGovernanceRetention=True|False,
     #ExpectedBucketOwner='string'
 #)
+
+#Delete multiple objects
+import os
+import glob
+s3 = boto3.client('s3')
+
+bucket_name="smontes-catch-all"
+key="list_buckets.py" #name of object
+
+for s3 in objects:
+    response = s3.delete_object(
+    Bucket=bucket_name,
+    Key=s3["Key"]
+)
