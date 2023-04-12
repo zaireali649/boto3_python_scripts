@@ -8,3 +8,5 @@ securitygroups = response['SecurityGroups']
 
 for securitygroup in securitygroups:
     print(securitygroup['GroupId'])
+    
+print(len(securitygroups))

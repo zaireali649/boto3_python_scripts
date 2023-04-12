@@ -8,3 +8,5 @@ subnets = response['Subnets']
 
 for subnet in subnets:
     print(subnet['SubnetId'])
+    
+print(len(subnets))

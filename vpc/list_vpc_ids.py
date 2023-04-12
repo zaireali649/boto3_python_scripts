@@ -8,3 +8,5 @@ vpcs = response['Vpcs']
 
 for vpc in vpcs:
     print(vpc['VpcId'])
+
+print(len(vpcs))
