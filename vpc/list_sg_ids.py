@@ -1,12 +1,12 @@
 import boto3
 
-vpc = boto3.client('ec2')
+vpc = boto3.client("ec2")
 
 response = vpc.describe_security_groups()
 
-securitygroups = response['SecurityGroups']
+securitygroups = response["SecurityGroups"]
 
 for securitygroup in securitygroups:
-    print(securitygroup['GroupId'])
+    print(securitygroup["GroupId"])
     
 print(len(securitygroups))
