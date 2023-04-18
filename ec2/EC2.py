@@ -8,3 +8,4 @@ ec2.create_instances(ImageId='ami-06e46074ae430fba6',
     MinCount=1)
     
 print("EC2 Instance created")
+

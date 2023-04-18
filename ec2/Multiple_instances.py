@@ -10,3 +10,4 @@ ec2.create_instances(ImageId='ami-06e46074ae430fba6',
 print("EC2 instances created")
     
 # 3 instances will be created
+
